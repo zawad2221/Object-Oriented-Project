@@ -1,0 +1,54 @@
+﻿@model EPrescription.Models.Company
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Company</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="companyId" />
+            <div class="form-group">
+                <label asp-for="companyName" class="control-label"></label>
+                <input asp-for="companyName" class="form-control" />
+                <span asp-validation-for="companyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="companyLicence" class="control-label"></label>
+                <input asp-for="companyLicence" class="form-control" />
+                <span asp-validation-for="companyLicence" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="companyEmail" class="control-label"></label>
+                <input asp-for="companyEmail" class="form-control" />
+                <span asp-validation-for="companyEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="companyAddress" class="control-label"></label>
+                <input asp-for="companyAddress" class="form-control" />
+                <span asp-validation-for="companyAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="companyPassword" class="control-label"></label>
+                <input asp-for="companyPassword" class="form-control" />
+                <span asp-validation-for="companyPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

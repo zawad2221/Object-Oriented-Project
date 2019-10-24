@@ -1,0 +1,48 @@
+﻿@model EPrescription.Models.Company
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Company</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.companyName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.companyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.companyLicence)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.companyLicence)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.companyEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.companyEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.companyAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.companyAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.companyPassword)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.companyPassword)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.companyId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

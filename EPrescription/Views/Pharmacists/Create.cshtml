@@ -1,0 +1,53 @@
+﻿@model EPrescription.Models.Pharmacist
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Pharmacist</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="storeName" class="control-label"></label>
+                <input asp-for="storeName" class="form-control" />
+                <span asp-validation-for="storeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="drugeLicence" class="control-label"></label>
+                <input asp-for="drugeLicence" class="form-control" />
+                <span asp-validation-for="drugeLicence" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pharmacistPhoneNumber" class="control-label"></label>
+                <input asp-for="pharmacistPhoneNumber" class="form-control" />
+                <span asp-validation-for="pharmacistPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="storeAddress" class="control-label"></label>
+                <input asp-for="storeAddress" class="form-control" />
+                <span asp-validation-for="storeAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pharmacistPassword" class="control-label"></label>
+                <input asp-for="pharmacistPassword" class="form-control" />
+                <span asp-validation-for="pharmacistPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
