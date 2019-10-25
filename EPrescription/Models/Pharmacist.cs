@@ -21,5 +21,6 @@ namespace EPrescription.Models
         [Required]
         public string pharmacistPassword { get; set; }
 
+
     }
 }
