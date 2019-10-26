@@ -3,14 +3,16 @@ using EPrescription.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EPrescription.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191026184250_MedicineTypeModel")]
+    partial class MedicineTypeModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,49 +70,6 @@ namespace EPrescription.Migrations
                     b.ToTable("Doctors");
                 });
 
-            modelBuilder.Entity("EPrescription.Models.Medicine", b =>
-                {
-                    b.Property<string>("medicineId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("companyId")
-                        .IsRequired();
-
-                    b.Property<string>("medicineFormId")
-                        .IsRequired();
-
-                    b.Property<string>("medicineName")
-                        .IsRequired();
-
-                    b.Property<string>("medicineSingleUniteQuantity");
-
-                    b.Property<string>("medicineTypeId")
-                        .IsRequired();
-
-                    b.HasKey("medicineId");
-
-                    b.HasIndex("companyId");
-
-                    b.HasIndex("medicineFormId");
-
-                    b.HasIndex("medicineTypeId");
-
-                    b.ToTable("Medicine");
-                });
-
-            modelBuilder.Entity("EPrescription.Models.MedicineForm", b =>
-                {
-                    b.Property<string>("medicineFormId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("medicineFormName")
-                        .IsRequired();
-
-                    b.HasKey("medicineFormId");
-
-                    b.ToTable("MedicineForm");
-                });
-
             modelBuilder.Entity("EPrescription.Models.MedicineType", b =>
                 {
                     b.Property<string>("medicineTypeId")
@@ -147,24 +106,6 @@ namespace EPrescription.Migrations
                     b.HasKey("pharmacistId");
 
                     b.ToTable("Pharmacists");
-                });
-
-            modelBuilder.Entity("EPrescription.Models.Medicine", b =>
-                {
-                    b.HasOne("EPrescription.Models.Company", "Company")
-                        .WithMany()
-                        .HasForeignKey("companyId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("EPrescription.Models.MedicineForm", "MedicineForm")
-                        .WithMany()
-                        .HasForeignKey("medicineFormId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("EPrescription.Models.MedicineType", "MedicineType")
-                        .WithMany()
-                        .HasForeignKey("medicineTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

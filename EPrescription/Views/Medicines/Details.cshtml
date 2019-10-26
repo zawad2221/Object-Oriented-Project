@@ -1,0 +1,48 @@
+﻿@model EPrescription.Models.Medicine
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Medicine</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.medicineName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.medicineName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.medicineSingleUniteQuantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.medicineSingleUniteQuantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicineForm)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MedicineForm.medicineFormId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicineType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MedicineType.medicineTypeId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Company.companyId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.medicineId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
