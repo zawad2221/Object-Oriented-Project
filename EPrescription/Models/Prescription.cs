@@ -7,5 +7,6 @@ namespace EPrescription.Models
 {
     public class Prescription
     {
+
     }
 }
